@@ -37,10 +37,6 @@ document.addEventListener('DOMContentLoaded', () => {
       container: document.body,
     });
     const {renderer, scene, camera} = mindarThree;
-
-    document.querySelector("#switch").addEventListener("click", () => {
-      mindarThree.switchCamera();
-    });
     
     const light = new THREE.HemisphereLight(0xffffff, 0xbbbbff, 1);
     const light2 = new THREE.DirectionalLight(0xffffff, 0.6);
