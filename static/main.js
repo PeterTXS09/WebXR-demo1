@@ -38,6 +38,10 @@ document.addEventListener('DOMContentLoaded', () => {
     });
     const {renderer, scene, camera} = mindarThree;
 
+    document.querySelector("#switch").addEventListener("click", () => {
+      mindarThree.switchCamera();
+    });
+    
     const light = new THREE.HemisphereLight(0xffffff, 0xbbbbff, 1);
     const light2 = new THREE.DirectionalLight(0xffffff, 0.6);
     light2.position.set(-0.5, 1, 1);
@@ -161,11 +165,9 @@ document.addEventListener('DOMContentLoaded', () => {
 	}
       });
     });
-	  
-    document.querySelector("#switch").addEventListener("click", () => {
-      mindarThree.switchCamera();
-    });
-	  
+
+
+
     await mindarThree.start();
     renderer.setAnimationLoop(() => {
       renderer.render(scene, camera);
