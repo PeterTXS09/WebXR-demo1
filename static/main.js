@@ -161,7 +161,11 @@ document.addEventListener('DOMContentLoaded', () => {
 	}
       });
     });
-
+	  
+    document.querySelector("#switch").addEventListener("click", () => {
+      mindarThree.switchCamera();
+    });
+	  
     await mindarThree.start();
     renderer.setAnimationLoop(() => {
       renderer.render(scene, camera);
